@@ -10,3 +10,6 @@
 - css: `body {color: #ffffff}`
 - flexbox
   - flexbox froggy, flexbox zombie
+- responsive
+  - redoinsive-disegn.com (examp)
+- Toggle Dark Mode (dark and white mode)
