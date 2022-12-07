@@ -1,0 +1,47 @@
+{% extends "./base.html" %}
+{% block content %}
+
+
+<!-- Central intro -->
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Movies</h1>
+            <p class="lead text-muted">Something short and leading about the collection below—its contents, the
+                creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it
+                entirely.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Cards -->
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6 g-4">
+
+            {% for blog in blogs %}
+
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <a href="{% url 'details' blog.pk %}" title="{{ blog.title }}">
+                                <img class="bd-placeholder-img card-img-top" width="100%" height="281" src="{{ blog.img }}">
+                            </a>
+                            <div class="card-body">
+                                <h4><a href="{% url 'details' blog.pk %}" title="{{ blog.title }}">{{ blog.title }}</a></h4>
+                                <p class="card-text">{{ blog.text | truncatechars:40 }}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary disable">{{ blog.year }}</button>
+                                    </div>
+                                    <small class="text-muted">{{ blog.min }} mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+        {% endfor %}
+
+        </div>
+    </div>
+</div>
+{% endblock content %}

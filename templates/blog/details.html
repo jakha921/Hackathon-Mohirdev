@@ -1,0 +1,54 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block method %}
+<a href="{% url 'update' blog.pk %}" class="navbar-brand d-flex align-items-center">
+    <strong>Edit post</strong>
+</a>
+<a href="{% url 'delete' blog.pk %}" class="navbar-brand d-flex align-items-center">
+    <strong>Delete post</strong>
+</a>
+{% endblock method %}
+
+{% block content %}
+
+
+    <h1>{{ blog.title }}  <i class="imd">IMD 8.4/10</i></h1>
+    <p>(recommended monitor size: 1366 x 768)</p>
+
+    <div>
+        <img class="poster" src="{{ blog.img }} " alt="Spider man">
+        <iframe width="960" height="474" src="https://www.youtube.com/embed/ii3n7hYQOl4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
+    </div>
+
+    <h2>Genres</h2>
+    <ul>
+        <li>Animation</li>
+        <li>Action</li>
+        <li>Adventure</li>
+        <li>Comedy</li>
+        <li>Family</li>
+        <li>Sci-Fi</li>
+    </ul>
+
+    <p class="info">We all know about St. Petersburg Parker.He saved the city, fell in love, and then saved the city again and again ... But all this is in our dimension.But what if, as a result of the work of a giant collider, a window from one measurement to another opens?Will there be a spider man in him?And how will he look? Get ready for the fact that in different universes there can be different spiders and once they will have to get together to fight an almost invincible enemy.</p>
+
+    <h2>About</h2>
+    <ul>
+        <p><b>Create at: </b>2018</p>
+        <p><b>Directors: </b>
+            <a href="https://www.imdb.com/name/nm2130108/?ref_=tt_ov_dr">Bob Persichetti</a>,
+            <a href="https://www.imdb.com/name/nm0709056/?ref_=tt_ov_dr">Peter Ramsey</a>,
+            <a href="https://www.imdb.com/name/nm0745247/?ref_=tt_ov_dr">Rodney Rothman</a>
+        </p>
+        <p><b>Writers: </b>
+            <a href="https://www.imdb.com/name/nm0005222/?ref_=tt_ov_wr">Phil Lord</a>,
+            <a href="https://www.imdb.com/name/nm0005222/?ref_=tt_ov_wr">Rodney Rothman</a>
+        </p>
+        <p><b>Stars: </b>
+            <a href="https://www.imdb.com/name/nm0005222/?ref_=tt_ov_wr">Shameik Moore</a>,
+            <a href="https://www.imdb.com/name/nm0005222/?ref_=tt_ov_wr">Jake Johnson</a>,
+            <a href="https://www.imdb.com/name/nm0005222/?ref_=tt_ov_wr">Hailee Steinfeld</a>
+    </ul>
+
+{% endblock content %}
